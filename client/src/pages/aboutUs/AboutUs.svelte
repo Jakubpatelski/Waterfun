@@ -66,7 +66,7 @@
     <!-- Contact Section -->
     <div class="contact">
         <h2>Contact Us</h2>
-        <p>Have questions or want to book an adventure? Contact us!</p>
+        <p>Masz pytania lub chcesz zarezerwować przygodę? Skontaktuj się z nami!</p>
         <a href="/contact" class="contact-button">Get in Touch</a>
     </div>
 

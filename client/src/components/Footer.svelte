@@ -21,7 +21,7 @@
     <div class="grid-item">
        <h1>Masz jakieś pytania?</h1>
        <a href="/contact" ><p class="contact">Skontaktuj się</p></a>
-       <p>Masz pytania lub chcesz zarezerwować przygodę? Skontaktuj się z nami!</p>
+       <p>Obserwuj nas na mediach społecznościowych</p>
        <a href="https://www.facebook.com/profile.php?id=100068474460939&locale=pl_PL" target="_blank"><img src="../../public/img/facebook.png" alt="" class='facebook'></a>
     </div>
 </div>
