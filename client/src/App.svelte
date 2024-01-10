@@ -57,9 +57,6 @@
         <Bookings />
       </PrivateRoute>
      
-      
-   
-     
       <Route path="/*">
         <Home />
       </Route>

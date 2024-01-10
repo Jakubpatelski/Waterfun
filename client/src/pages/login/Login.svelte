@@ -1,16 +1,15 @@
 <script>
-    import { useNavigate } from 'svelte-navigator'
-    import { user } from '../../stores/userStore.js';
-    import toast, { Toaster } from 'svelte-french-toast';
-    import { Base_URL } from '../../stores/global.js';
+  import { useNavigate } from 'svelte-navigator'
+  import { user } from '../../stores/userStore.js';
+  import toast, { Toaster } from 'svelte-french-toast';
+  import { Base_URL } from '../../stores/global.js';
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
+  let username = "";
+  let password = "";
 
-    let username = "";
-    let password = "";
-
-  async function handleSubmit() {
+  async function logIn() {
 
   const data = { username, password };
   
@@ -25,7 +24,6 @@
 
     if (response.ok) {
       const userData = await response.json();
-      console.log(userData)
       user.set(userData);
       navigate("/admin");
     } else {
@@ -38,19 +36,16 @@
   }
 }
 
-    
-    
 </script>
 
 <Toaster />
 
 
-
-      <div class="background">
+    <div class="background">
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form on:submit|preventDefault={handleSubmit}>
+    <form on:submit|preventDefault={logIn}>
         <h3>Login Here</h3>
         <label for="username">Username</label>
         <input type="text" placeholder="Username" id="username" bind:value={username} >

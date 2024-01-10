@@ -1,35 +1,31 @@
 <script>
-    import Modal from './Modal.svelte';
-    import toast, { Toaster } from 'svelte-french-toast';
+  import Modal from './Modal.svelte';
+  import toast, { Toaster } from 'svelte-french-toast';
+  import { Base_URL } from '../stores/global';
 
-    export let refresh;
-    let modal;
+  export let refresh;
+  let modal;
 
+  let track = {
+    name: '',
+    description: '',
+    img: '',
+  } 
+  let files;
+  let uploadOK = false;
 
-
-let newPost = {
-        name: '',
-        description: '',
-        img: '',
-}
-
-let files;
-
-let uploadOK = false;
-
-
-async function uploadImage() {
+  async function uploadImage() {
     try {
         const formData = new FormData();
         formData.append('file', files[0]);
-        const response = await fetch("http://localhost:8080/api/tracks/upload_image", {
+        const response = await fetch($Base_URL + '/tracks/upload_image', {
             method: 'POST',
             body: formData,
         });
       
         if (response.ok) {
             const { result } = await response.json();
-            newPost.img =  result.variants.filter((variant) => variant.split("/").pop() === 'original')[0]
+            track.img =  result.variants.filter((variant) => variant.split('/').pop() === 'original')[0]
             uploadOK = true;
         } else {
             uploadOK = false;
@@ -42,12 +38,12 @@ async function uploadImage() {
 
 async function post() {
     try {
-        const response = await fetch('http://localhost:8080/api/tracks', {
+        const response = await fetch($Base_URL + '/tracks', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify(newPost)
+            body: JSON.stringify(track)
         });
         if (response.ok) {
           toast.success('Track Added');
@@ -72,20 +68,20 @@ async function post() {
           <div>
     
             <label for="name">Nazwa:</label>
-            <input type="text" id="name" name="name" required bind:value={newPost.name}>
+            <input type="text" id="name" name="name" required bind:value={track.name}>
           </div>
           <div>
             <label for="description">Opis:</label>
-            <input type="text" id="description" name="description" required bind:value={newPost.description}>
+            <input type="text" id="description" name="description" required bind:value={track.description}>
           </div>
           <div class="mb-4">
             <label for="file" class="block text-gray-700 text-sm font-bold mb-2">
                 Image:
             </label>
-            <form action="/api/tracks/upload_image" method="post" enctype="multipart/form-data">
+            <form on:change={() => uploadImage()} method="post" enctype="multipart/form-data">
               <input bind:files on:change={uploadImage} accept="image/png, image/jpeg, image/gif, image/webp, image/svg" type="file" name="file" />
             </form>
-        </div>
+          </div>
           <div class="button-wrapper">
             <button disabled={!uploadOK} type="submit" class="submit-button">Submit</button>
             <button on:click={refresh} on:click={() => modal.hide()} class="close-button">Close</button>
@@ -153,22 +149,15 @@ async function post() {
     cursor: pointer;
   }
 
-  /* .submit-button:disabled {
-    background-color: grey;
-    cursor: not-allowed;
-  } */
+
 
   .form-container button.submit-button:disabled {
-    /* background-color: #45a049; */
     background-color: grey;
     cursor: not-allowed;
   }
 
 
   .form-container button.submit-button:disabled:hover {
-    /* background-color: #45a049; */
-    /* background-color: grey;
-    cursor: not-allowed; */
     background-color: grey;
     cursor: not-allowed;
 

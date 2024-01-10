@@ -210,7 +210,7 @@ async function updateCustomer() {
     }
    
     .form-container {
-      max-width: 400px;
+      width: 500px;
       margin: 0 auto;
       background-color: white;
       padding: 30px;

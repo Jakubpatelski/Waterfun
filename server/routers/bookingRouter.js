@@ -119,6 +119,7 @@ router.post("/", async (req, res) => {
   }
 
   try {
+    
     // Check if booking_end is not before booking_start
     if (new Date(booking_end) < new Date(booking_start)) {
       return res

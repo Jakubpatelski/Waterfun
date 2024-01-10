@@ -1,5 +1,4 @@
 <script>
-
     import Navbar from "../../components/Navbar.svelte";
     import { onMount } from "svelte";
     import { Base_URL } from '../../stores/global.js';

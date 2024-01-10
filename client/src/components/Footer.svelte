@@ -8,6 +8,7 @@
     <div class="grid-item">
        <div class="date-hours">
         <h1>Godziny otwarcia</h1>
+        <p>Od czerwca do września</p>
         <p>Poniedzialek <span>10:00-21:00</span></p>
         <p>Wtorek <span>10:00-21:00</span></p>
         <p>Środa <span>10:00-21:00</span></p>

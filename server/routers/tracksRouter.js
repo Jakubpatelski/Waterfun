@@ -4,7 +4,6 @@ import { Router } from "express";
 
 const router = Router();
 
-let upload = multer();
 
 router.get("/", async (req, res) => {
   const [result] = await db.execute(
@@ -69,6 +68,8 @@ router.post("/", async (req, res) => {
   }
 });
 
+let upload = multer();
+
 router.post("/upload_image", upload.single("file"), async (req, res) => {
   const formData = new FormData();
   const blobData = new Blob([req.file.buffer]);
@@ -90,38 +91,6 @@ router.post("/upload_image", upload.single("file"), async (req, res) => {
   }
 });
 
-// router.put("/:id",, async (req, res) => {
-//   const trackId = req.params.id;
-//   const { name, description } = req.body;
-
-//   try {
-//     // Check if the player exists
-//     const [existingTrack] = await db.execute(
-//       "SELECT * FROM tracks WHERE id = ?",
-//       [trackId]
-//     );
-
-//     if (existingTrack.length === 0) {
-//       return res.status(404).send({ error: "Track not found" });
-//     }
-
-//     // Get the existing player's image path
-//     const existingImage = existingTrack[0].img;
-
-//     // Determine the new image path
-//     const imgPath = req.file ? req.file.filename : existingImage;
-
-//     // Update the player information in the database
-//     await db.execute(
-//       "UPDATE tracks SET name = ?, description = ?, img = ? WHERE id = ?",
-//       [name, description, imgPath, trackId]
-//     );
-
-//     res.status(200).send({ message: `Track ${name} updated` });
-//   } catch (error) {
-//     res.status(500).send({ error: "Failed to update Track" });
-//   }
-// });
 
 router.put("/:trackId", async (req, res) => {
   const { name, description, img } = req.body;

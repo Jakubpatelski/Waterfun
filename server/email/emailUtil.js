@@ -1,13 +1,33 @@
 import nodemailer from "nodemailer";
 
 // transporter
-const transporter = nodemailer.createTransport({
+export const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: "jakubnodemailer@gmail.com",
     pass: process.env.Nodemailer_Password,
   },
 });
+
+
+export async function sendEmail(req) {
+     let info = await transporter.sendMail({
+      to: "jakubpatelski24@gmail.com",
+      subject: `${req.body.subject}`,
+      html: `
+            <html>
+              <body>
+                <p><strong>Full Name:</strong> ${req.body.fullName}</p>
+                <p><strong>Email:</strong> ${req.body.email}</p>
+                <p><strong>Message:</strong> ${req.body.text}</p>
+              </body>
+            </html>
+          `,
+    });
+
+}
+
+
 
 export async function sendBookingConfirmationEmail(
   customerDetails,
@@ -98,3 +118,4 @@ export async function sendBookingDeletionEmail(
     console.error("Error sending email:", error);
   }
 }
+

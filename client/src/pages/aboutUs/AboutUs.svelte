@@ -15,7 +15,8 @@
     <div class="hero">
         <div class="container">
             <h1 class="title">Welcome to <span class="highlight">Water</span><span class="fun-yellow">Fun </span>Polska</h1>
-            <p class="subtitle">Embark on a journey of thrilling water adventures with us.</p>
+            <p class="subtitle">Wyrusz z nami w podróż pełną ekscytujących przygód na wodzie.
+            </p>
         </div>
     </div>
 
@@ -23,16 +24,44 @@
     <div class="about-us">
         <h2>About Us</h2>
         <p>
-            WaterFun Polska, established in 2021, is a water park in Skorzęcin committed to user safety and quality. With a TUV certificate and highly trained lifeguards, the park ensures a secure and enjoyable experience.
-        </p>
-        <p>
-            Seeking to enhance online presence, we propose a website as a centralized hub for park details, bookings, and promotions. This initiative aligns with WaterFun Polska's dedication to safety and quality, offering customers an informative platform for planning visits.
-        </p>
+            WaterFun Polska, założony w 2021 roku, to park wodny w Skorzęcinie zobowiązany do zapewnienia bezpieczeństwa użytkowników i jakości. Posiadając certyfikat TUV oraz wysoko wykwalifikowanych ratowników, park gwarantuje bezpieczne i przyjemne doświadczenia.
+          </p>
+          <p>
+            Dążąc do wzmocnienia obecności online, proponujemy stronę internetową jako scentralizowane centrum informacji o parku, rezerwacji i promocjach. Ta inicjatywa jest zgodna z zaangażowaniem WaterFun Polska w bezpieczeństwo i jakość, oferując klientom informacyjną platformę do planowania wizyt.
+          </p>
+          
        
     </div>
 
     <!-- Add spacing below the About Us section -->
     <div class="spacer"></div>
+
+
+    <div class="team-section">
+        <h2>OUR TEAM</h2>
+        <h4>Skontaktuj się z naszym zespołem, chętnie odpowiemy na Twoje pytania dotyczące nasz usług!</h4>
+        
+        <div class="team">
+          <div class="team-member">
+            <img src="./../../public/img/waterfun-pic.jpeg" alt="Emil Tuszyński">
+            <div class="name">EMIL TUSZYŃSKI</div>
+            <div class="email">emil@waterfun.com</div>
+          </div>
+          
+          <div class="team-member">
+            <img src="./../../public/img/waterfun-pic.jpeg" alt="Przemysław Białas">
+            <div class="name">PRZEMYSŁAW BIAŁAS</div>
+            <div class="email">przemyslaw@waterfun.com</div>
+          </div>
+          
+          <div class="team-member">
+            <img src="../../../public/img/waterfun-pic.jpeg" alt="Zbigniew Hoszewski">
+            <div class="name">ZBIGNIEW HOSZOWSKI</div>
+            <div class="email">zbigniew@waterfun.com</div>
+          </div>
+        </div>
+      </div>
+      
 
     <!-- Contact Section -->
     <div class="contact">
@@ -41,16 +70,7 @@
         <a href="/contact" class="contact-button">Get in Touch</a>
     </div>
 
-    <!-- Facebook Page -->
-    <div id="fb-root"></div>
-    <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100068474460939&amp;locale=pl_PL" data-tabs="timeline" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-        <blockquote cite="https://www.facebook.com/profile.php?id=100068474460939&amp;locale=pl_PL" class="fb-xfbml-parse-ignore">
-            <a href="https://www.facebook.com/profile.php?id=100068474460939&amp;locale=pl_PL">WaterFun- Skorzęcin</a>
-        </blockquote>
-    </div>
-
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="bsG7vBcu"></script>
-</section>
+  </section>
 
 <style>
     /* Add your custom styles here */
@@ -144,6 +164,44 @@ hr {
   width: 100%; /* Full width of the container */
   margin-top: 0; /* Remove default margin */
 }
+
+.team-section {
+    text-align: center;
+  }
+
+  .team-section h2 {
+    color: #333;
+  }
+
+  .team {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+
+  .team-member {
+    margin: 10px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .team-member img {
+    width: 350px;
+    height: 300px;
+  }
+
+  .name {
+    margin-top: 15px;
+    font-size: 1.2em;
+    color: #333;
+  }
+
+  .email {
+    color: #555;
+    font-size: 0.9em;
+  }
 </style>
 
 <Footer />

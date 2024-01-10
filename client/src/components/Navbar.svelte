@@ -1,7 +1,6 @@
 <script>
     import { Router, Link, useNavigate } from 'svelte-navigator'
     import { user } from '../stores/userStore';
-    import toast, { Toaster } from 'svelte-french-toast';
     import { Base_URL } from '../stores/global';
 
     const navigate = useNavigate()
@@ -19,12 +18,7 @@
         if(response.ok){
             navigate('/');
             user.set(null);
-            localStorage.removeItem("user");  
 
-        toast('See You Later!', {
-            icon: '👋',});
-        } else {
-            toast.error("error")
         }
     }
 

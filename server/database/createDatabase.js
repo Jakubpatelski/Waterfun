@@ -31,35 +31,6 @@ const createTables = async () => {
 };
 
 createTables();
-// if (isDeleteMode) {
-
-//     // db.execute(`DROP TABLE if exists favorites;`);
-//     db.execute(`DROP TABlE if exists users`);
-//     // db.execute(`DROP TABLE if exists players`);
-
-// }
-
-// db.execute(`
-// CREATE TABLE IF NOT EXISTS users (
-//     id INTEGER PRIMARY KEY AUTO_INCREMENT,
-//     email VARCHAR(500) UNIQUE NOT NULL,
-//     username VARCHAR(255) NOT NULL,
-//     password VARCHAR(255) NOT NULL,
-//     phone_number VARCHAR(15),
-//     job_title VARCHAR(100),
-//     admin BOOLEAN NOT NULL
-// );
-
-// CREATE TABLE IF NOT EXISTS tracks (
-//     id INTEGER PRIMARY KEY AUTO_INCREMENT,
-//     name VARCHAR(255) NOT NULL,
-//     description VARCHAR(255),
-//     img VARCHAR(255)
-// );
-// `);
-
-// db.execute(`INSERT INTO users(email, username, password, phone_number, job_title,  admin)
-//   VALUES(?, ?, ?, ?, ?, ?)`, ["aa", "aa", "aa", "66666666", "CEO", 1]);
 
   
 

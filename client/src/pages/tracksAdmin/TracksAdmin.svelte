@@ -162,9 +162,6 @@
     </Modal>
     
 
-    
-    
-  
   <style>
 
     .container {
@@ -189,13 +186,6 @@
         border-radius: 8px;
     }
     
-    /* img:hover{
-        -webkit-transform:scale(2); 
-    transform:scale(2);
-    border-radius: 8px;
-
-    } */
-    /* Table styles */
   .responsive-table {
     width: 90%; 
     margin: 0 auto;

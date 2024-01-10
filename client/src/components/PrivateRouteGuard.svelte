@@ -1,18 +1,17 @@
 <script>
 	import { useNavigate } from "svelte-navigator";
-    import { user } from "../stores/userStore";
+  import { user } from "../stores/userStore";
 	import { onMount } from "svelte";
 	
-
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
 	onMount(() => {
     if (!$user) {
-      navigate("/")
+      navigate("/login")
     }
   });
 </script>
 
-{#if $user}
-	<slot />
-{/if}
+  {#if $user}
+    <slot />
+  {/if}
