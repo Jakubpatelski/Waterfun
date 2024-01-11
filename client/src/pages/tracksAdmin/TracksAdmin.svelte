@@ -102,7 +102,10 @@
 </script>
 <Toaster />
 <Navbar />
-<AddTrack refresh={getTracks}/>
+
+{#if isAdmin}
+  <AddTrack />
+{/if}
 
 
 <div class="container">
@@ -181,7 +184,7 @@
   }
  
     img{
-        width: 150px;
+        width: 250px;
         height: 120px;
         border-radius: 8px;
     }
@@ -241,12 +244,6 @@
     margin-top: 20px;
   }
 
-  h1 {
-    font-size: 24px;
-    color: #2c3e50;
-    margin-bottom: 20px;
-    text-align: center;
-  }
 
   label {
     font-size: 16px;
@@ -325,6 +322,7 @@
   .edit-btn:hover {
     background-color: #0b5810;
   }
+  
 </style>
 
     

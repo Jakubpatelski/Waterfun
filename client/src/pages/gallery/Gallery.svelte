@@ -36,7 +36,7 @@
 </script>
 <NavbarUser />
 
-<h1 class="page-title">Wynajem</h1>
+<h1 class="page-title">Galeria</h1>
 <hr />
 <div class="gallery">
 {#each images as image, index}

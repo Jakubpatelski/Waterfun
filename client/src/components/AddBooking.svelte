@@ -4,8 +4,6 @@
     import { onMount } from "svelte";
     import toast, { Toaster } from 'svelte-french-toast';
 
-
-    export let refresh;
     let modal;
 
     let booking = {
@@ -127,7 +125,7 @@
   
         <div class="button-wrapper">
           <button type="submit" class="submit-button">Submit</button>
-          <button on:click={refresh} on:click={() => modal.hide()} class="close-button">Close</button>
+          <button  on:click={() => modal.hide()} class="close-button">Close</button>
         </div>
       </form>
     </div>
@@ -166,15 +164,18 @@
     margin-bottom: 10px;
   }
 
-  .form-container input,
-  .form-container button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-  }
+
+.form-container input,
+.form-container button,
+.form-container select {
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
 
   .form-container .button-wrapper {
     display: flex;
@@ -202,4 +203,8 @@
   .form-container button.close-button:hover {
     background-color: #d32f2f;
   }
+
+
+
+
 </style>

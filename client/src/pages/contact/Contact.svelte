@@ -4,7 +4,7 @@
     import toast, { Toaster } from 'svelte-french-toast';
     import { Base_URL } from "../../stores/global";
    
-
+    let formElement;
     let fullName= "";
     let email= "";
     let subject = "";
@@ -29,6 +29,8 @@
         catch(error) {
               toast.error(error);
         }
+        formElement.reset();
+
     }
 </script>
 <NavbarUser />
@@ -46,7 +48,7 @@
   </div>
   
   <div class="grid-item grid-item-2">
-  <form on:submit|preventDefault={handleContact}  class="contact-form">
+  <form bind:this={formElement} on:submit|preventDefault={handleContact}  class="contact-form">
   
     <label for="fullName" >Imię i Nazwisko</label>
     <input type="text" id="fullName" name="fullName"  required bind:value={fullName}>
@@ -128,18 +130,17 @@ button:hover {
 }
 
 .page-title {
-  text-align: center; /* Center the title */
-  margin: 3%; /* Add some space below the title */
-
+  text-align: center; 
+  margin: 3%; 
 }
 
 
 hr {
-  border: none; /* Remove default border */
-  height: 2px; /* Thickness of the line */
-  background-color:#D3E5FF; /* Color of the line */
-  width: 100%; /* Full width of the container */
-  margin-top: 0; /* Remove default margin */
+  border: none; 
+  height: 2px; 
+  background-color:#D3E5FF; 
+  width: 100%; 
+  margin-top: 0;
 }
 
 

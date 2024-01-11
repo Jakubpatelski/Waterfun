@@ -85,7 +85,7 @@ async function updateCustomer() {
 <Toaster />
 
 {#if isAdmin}
-  <AddCustomer refresh={getCustomers}/>
+  <AddCustomer />
 {/if}
 
 <div class="container">

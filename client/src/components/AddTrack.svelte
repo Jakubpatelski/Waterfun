@@ -3,7 +3,6 @@
   import toast, { Toaster } from 'svelte-french-toast';
   import { Base_URL } from '../stores/global';
 
-  export let refresh;
   let modal;
 
   let track = {
@@ -84,7 +83,7 @@ async function post() {
           </div>
           <div class="button-wrapper">
             <button disabled={!uploadOK} type="submit" class="submit-button">Submit</button>
-            <button on:click={refresh} on:click={() => modal.hide()} class="close-button">Close</button>
+            <button on:click={() => modal.hide()} class="close-button">Close</button>
           </div>
       
         </form>

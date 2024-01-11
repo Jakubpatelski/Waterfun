@@ -1,12 +1,9 @@
 <script>
     import NavbarUser from "../../components/NavbarUser.svelte";
     import Footer from "../../components/Footer.svelte";
-    import toast, { Toaster } from 'svelte-french-toast';
-    import { Base_URL } from "../../stores/global";
 </script>
 
 <NavbarUser />
-<Toaster />
 
 <h1 class="page-title">O nas</h1>
 <hr />
@@ -38,9 +35,10 @@
 
 
     <div class="team-section">
+      <div class="our-team">
         <h2>OUR TEAM</h2>
         <h4>Skontaktuj się z naszym zespołem, chętnie odpowiemy na Twoje pytania dotyczące nasz usług!</h4>
-        
+      </div>
         <div class="team">
           <div class="team-member">
             <img src="./../../public/img/waterfun-pic.jpeg" alt="Emil Tuszyński">
@@ -65,26 +63,19 @@
 
     <!-- Contact Section -->
     <div class="contact">
-        <h2>Contact Us</h2>
-        <p>Masz pytania lub chcesz zarezerwować przygodę? Skontaktuj się z nami!</p>
+        <h2 class="contact-h2">CONTACT US</h2>
+        <h4>Masz pytania lub chcesz zarezerwować przygodę? Skontaktuj się z nami!</h4>
         <a href="/contact" class="contact-button">Get in Touch</a>
     </div>
 
   </section>
 
 <style>
-    /* Add your custom styles here */
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
 
     .hero {
         color: black;
         text-align: center;
-        padding: 100px 0;
+        padding: 50px 0;
     }
 
     .container {
@@ -109,22 +100,21 @@
     }
 
     .about-us {
-        max-width: 800px;
-        margin: 0 auto;
+        margin: 0% 20%;
         text-align: justify;
         padding: 20px;
         background-color: #f8f8f8;
-        border-radius: 8px;
+        border-radius: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         color: #444;
+        font-size: 1.3rem;
+
     }
 
-    .about-us p {
-        margin-bottom: 20px;
-    }
+
 
     .spacer {
-        height: 30px; /* Adjust the height as needed for spacing */
+        height: 30px;
     }
 
     .contact {
@@ -132,11 +122,8 @@
         padding: 50px;
     }
 
-    .contact p {
-        color: #333;
-    }
-
     .contact-button {
+        font-size: 20px;
         display: inline-block;
         background-color: #007BFF;
         color: #fff;
@@ -145,10 +132,16 @@
         border-radius: 5px;
         margin-top: 20px;
         transition: background-color 0.3s ease-in-out;
+        border: 2px solid black;
+
+
     }
 
     .contact-button:hover {
-        background-color: #0056b3;
+        background-color: #fff;
+        color: #007BFF;
+        border: 2px solid black;
+        border-color: #007BFF;  
     }
 
 
@@ -157,6 +150,7 @@
   margin: 3%; /* Add some space below the title */
 
 }
+
 hr {
   border: none; /* Remove default border */
   height: 2px; /* Thickness of the line */
@@ -170,7 +164,7 @@ hr {
   }
 
   .team-section h2 {
-    color: #333;
+    color: rgb(117, 128, 138);
   }
 
   .team {
@@ -200,7 +194,19 @@ hr {
 
   .email {
     color: #555;
-    font-size: 0.9em;
+    font-size: 1.1em;
+  }
+
+  .our-team{
+    margin: 50px;
+  }
+
+  h4{
+    font-size: 1.3em;
+  }
+  .contact-h2{
+    color: rgb(117, 128, 138);
+
   }
 </style>
 

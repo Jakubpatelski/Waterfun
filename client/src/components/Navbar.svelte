@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
 <script>
     import { Router, Link, useNavigate } from 'svelte-navigator'
     import { user } from '../stores/userStore';
@@ -28,10 +30,10 @@
     <Router>
         <nav>
             <div class="nav_text" id="notes">
-                <Link to="/admin/bookings">Bookings</Link>
-                <Link to="/admin/users">Users</Link>
-                <Link to="/admin/tracks">Tracks</Link>
-                <Link to="/admin/customers">Customers</Link>            
+                <Link to="/admin/bookings"><i class="fa-solid fa-calendar"></i> Bookings</Link>
+                <Link to="/admin/users"><i class="fa-solid fa-user"></i> Users</Link>
+                <Link to="/admin/tracks"><i class="fa-solid fa-water"></i> Tracks</Link>
+                <Link to="/admin/customers"><i class="fas fa-users"></i> Customers</Link>            
             </div>
             <button on:click={logout} class="btn logout">Logout</button>
         </nav>
@@ -56,10 +58,6 @@
     }
 
   
-    /* .logout{       
-        background-color: #dc3545;
-
-    } */
     .nav_text {
         display: flex;
         gap: 20px;

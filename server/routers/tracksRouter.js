@@ -119,7 +119,6 @@ router.put("/:trackId", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   const trackId = req.params.id;
   try {
-    // Get the image path of the player before deleting
     const [track] = await db.execute("SELECT img FROM tracks WHERE id = ?", [
       trackId,
     ]);

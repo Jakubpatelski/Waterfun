@@ -97,7 +97,11 @@
 
 </script>
 <Navbar />
-<AddBooking  refresh={getBookings}/>
+
+{#if isAdmin}
+  <AddBooking />
+{/if}
+
 <div class="container">
     <table class="responsive-table">
       <tr class="table-header">
@@ -132,7 +136,7 @@
         {/each}
       {:else}
         <tr>
-          <td colspan="5">No customers available</td>
+          <td colspan="5">No bookings available</td>
         </tr>
       {/if}
     </table>
@@ -239,17 +243,6 @@
         display: block;
       }
     
-      input {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #bdc3c7;
-        border-radius: 4px;
-        font-size: 16px;
-        color: #333;
-        box-sizing: border-box;
-      }
-    
       .delete-btn, .edit-btn {
       color: white;
       border: none;
@@ -271,10 +264,7 @@
       background-color: #4caf50;
     }
     
-    
-      input[type="checkbox"] {
-        margin-bottom: 20px;
-      }
+  
     
       .button-wrapper {
         display: flex;
@@ -313,4 +303,15 @@
       .edit-btn:hover {
         background-color: #0b5810;
       }
+
+  .form-container input,
+.form-container button,
+.form-container select {
+  box-sizing: border-box; 
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
     </style>

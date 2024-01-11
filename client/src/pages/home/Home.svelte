@@ -6,16 +6,11 @@
     import Carousel from "../../components/Carousel.svelte";
 </script>
 
-<NavbarUser />
-
-
-
-<Carousel />
-
-    
-
-<Footer />
-
+<div>
+  <NavbarUser />
+  <Carousel />
+  <Footer />
+</div>
 
 <style>
     
