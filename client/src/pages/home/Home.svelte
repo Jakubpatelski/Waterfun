@@ -1,6 +1,5 @@
 
 <script>
-    import Facebook from "../../components/Facebook.svelte";
     import Footer from "../../components/Footer.svelte";
     import NavbarUser from "../../components/NavbarUser.svelte";
     import Carousel from "../../components/Carousel.svelte";

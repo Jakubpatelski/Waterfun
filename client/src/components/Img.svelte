@@ -2,23 +2,13 @@
     export let src
   </script>
   
-  <div
-    class="container"
-  >
+  <div class="container">
     <img src={src} alt="">
-
-
-</div>
+  </div>
 
     
-
-
-
-
-
-
-  
   <style>
+
   .container {     
     height: 1000px;
     width: 100%;
@@ -29,18 +19,9 @@
     margin: 0;
   }
 
-    .container img {
-        width: 100%; 
-        height: auto; 
+  .container img {
+    width: 100%; 
+    height: auto; 
+  }
 
-    }
-
-
-
-
-
-
-
-   
-
-  </style>
+</style>
