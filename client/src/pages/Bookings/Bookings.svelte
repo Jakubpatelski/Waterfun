@@ -225,7 +225,7 @@
       }
      
       .form-container {
-        max-width: 400px;
+        max-width: 500px;
         margin: 0 auto;
         background-color: white;
         padding: 30px;
@@ -282,36 +282,44 @@
         color: white;
       }
     
-      .submit-button {
-        background-color: #4caf50;
-      }
-    
-      .submit-button:hover {
-        background-color: #27ae60;
-      }
-    
-      .close-button {
-        background-color: #e74c3c;
-      }
-    
-      .close-button:hover,
-      .delete-btn:hover {
-        background-color: #c0392b;
-      }
-    
-      .submit-button:hover,
-      .edit-btn:hover {
-        background-color: #0b5810;
-      }
 
-  .form-container input,
+.form-container input,
 .form-container button,
 .form-container select {
-  box-sizing: border-box; 
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
 }
+
+
+.form-container .button-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .form-container button.submit-button {
+    width: 48%; /* Adjusted width to accommodate both buttons */
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+
+  .form-container button.submit-button:hover {
+    background-color: #45a049;
+  }
+
+  .form-container button.close-button {
+    width: 48%; /* Adjusted width to match the submit button */
+    background-color: #f44336;
+    color: white;
+    cursor: pointer;
+  }
+
+  .form-container button.close-button:hover {
+    background-color: #d32f2f;
+  }
     </style>

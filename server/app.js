@@ -19,7 +19,7 @@ app.use(
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false }, //true runs on https so should be false
+    cookie: { secure: false }, //true runs on https so should be false on dev
   })
 );
 
@@ -28,7 +28,7 @@ export function isAuthenticated(req, res, next) {
   if (req.session && req.session.user) {
     next();
   } else {
-    res.redirect("/login");
+    res.status(500).send({ error: "Failed to retrieve" });
   }
 }
 

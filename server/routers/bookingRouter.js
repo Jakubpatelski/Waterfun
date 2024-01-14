@@ -4,7 +4,8 @@ import moment from "moment/moment.js";
 import { sendBookingConfirmationEmail, sendBookingEditConfirmationEmail, sendBookingDeletionEmail } from "../email/emailUtil.js";
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+
+router.get("/", async (req, res, next) => {
   try {
     const [result] = await db.execute(`
         SELECT 

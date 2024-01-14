@@ -111,7 +111,7 @@ async function post() {
    }
 
   .form-container {
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto;
     background-color:white;
     padding: 50px;

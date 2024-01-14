@@ -71,7 +71,7 @@ function selectTrack(track) {
     
         <section class="track-detail">
             {#if selectedTrack}
-            <img class="selected-track-image" src={selectedTrack.img} alt={selectedTrack.name} />
+            <a href={selectedTrack.img} target="_blank"><img class="selected-track-image" src={selectedTrack.img} alt={selectedTrack.name} /></a>
             <h1>{selectedTrack.name}</h1>
             <p>{selectedTrack.description}</p>     
             {/if}
